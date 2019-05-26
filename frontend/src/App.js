@@ -38,7 +38,7 @@ class App extends Component {
             <MaterialTable
                 columns={[
                     { title: 'Kayıt No', field: 'KAYIT_NO', type: number},
-                    { title: 'Kayıt Tarihi', field: 'KAYIT_TARIHI',},
+                    { title: 'Kayıt Tarihi', field: 'KAYIT_TARIHI'},
                     { title: 'Kayıt Yapan', field: 'KAYIT_YAPAN'},
                     { title: 'Bildiren', field: 'BILDIREN'},
                     { title: 'Bildiren Tel', field: 'BILDIREN_TEL'},
@@ -48,7 +48,7 @@ class App extends Component {
                     { title: 'Atanan', field: 'ATANAN'},
                     { title: 'Acil', field: 'ACIL'},
                     { title: 'İş Bitimi Açıklaması', field: 'IS_BITIMI_ACIKLAMA'},
-                    { title: 'Tamamlama Tarihi', field: 'TAMAMLAMA_TARIHI', type:'date'},
+                    { title: 'Tamamlama Tarihi', field: 'TAMAMLAMA_TARIHI'},
 
                 ]}
                 data = {
@@ -82,7 +82,20 @@ class App extends Component {
                         new Promise((resolve, reject) => {
                             setTimeout(() => {
                                 {
-                                    axios.post('http://localhost:8081/toyota/faults', ({reporter:"ÖZGÜR"}));// tırnak içinde özgür yazan yere formdan çektiği datayı yazması lazım
+                                    axios.post('http://localhost:8081/toyota/faults', ({
+                                        reporter:"Emre",
+                                        registerDate:"23.02.1997",
+                                        recorder:"Halit",
+                                        reporterTel:5539667920,
+                                        faultType:"Su Kaçağı",
+                                        location:"Mutfak",
+                                        shop:"boş",
+                                        assigned:"Destek Birimi",
+                                        emergency:"Evet",
+                                        explanation:"Sorun Çözüldü",
+                                        endDay:"26.05.2019",
+
+                                    }));
                                 }
                                 resolve()
                             }, 1)
@@ -92,7 +105,7 @@ class App extends Component {
                         new Promise((resolve, reject) => {
                             setTimeout(() => {
                                 {
-                                    axios.delete('http://localhost:8081/toyota/faults/1');// 1 yazan yere formdan çektiği rakamı yazması lazım
+                                    axios.delete('http://localhost:8081/toyota/faults/');
                                 }
                                 resolve()
                             }, 1)

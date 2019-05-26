@@ -16,13 +16,13 @@ public class FaultDTO {
 
     private Long id;
 
-    private Date registerDate;
+    private String registerDate;
 
     private String recorder;
 
     private String reporter;
 
-    private int reporterTel;
+    private Long reporterTel;
 
     private String faultType;
 
@@ -36,7 +36,7 @@ public class FaultDTO {
 
     private String explanation;
 
-    private Date endDay;
+    private String endDay;
 
     private String kayitTuru;
 

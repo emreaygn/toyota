@@ -18,42 +18,42 @@ public class Fault {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "kayit_no", nullable = false)
+    @Column(name = "kayit_no")
     private Long id;
 
-    @Column(name = "kayit_tarihi", nullable = false)
-    private Date registerDate;
+    @Column(name = "kayit_tarihi")
+    private String registerDate;
 
-    @Column(name = "kayit_yapan", nullable = false)
+    @Column(name = "kayit_yapan")
     private String recorder;
 
-    @Column(name = "bildiren", nullable = false)
+    @Column(name = "bildiren")
     private String reporter;
 
-    @Column(name = "bildiren_tel", nullable = false)
-    private int reporterTel;
+    @Column(name = "bildiren_tel")
+    private Long reporterTel;
 
-    @Column(name = "ariza", nullable = false)
+    @Column(name = "ariza")
     private String faultType;
 
-    @Column(name = "yeri", nullable = false)
+    @Column(name = "yeri")
     private String location;
 
-    @Column(name = "shop", nullable = false)
+    @Column(name = "shop")
     private String shop;
 
-    @Column(name = "atanan", nullable = false)
+    @Column(name = "atanan")
     private String assigned;
 
-    @Column(name = "acil", nullable = false)
+    @Column(name = "acil")
     private String emergency;
 
-    @Column(name = "is_bitimi_aciklama", nullable = false)
+    @Column(name = "is_bitimi_aciklama")
     private String explanation;
 
-    @Column(name = "tamamlama_tarihi", nullable = false)
-    private Date endDay;
+    @Column(name = "tamamlama_tarihi")
+    private String endDay;
 
-    @Column(name = "kayit_turu", nullable = false)
+    @Column(name = "kayit_turu")
     private String kayitTuru;
 }
