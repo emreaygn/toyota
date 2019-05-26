@@ -83,17 +83,17 @@ class App extends Component {
                             setTimeout(() => {
                                 {
                                     axios.post('http://localhost:8081/toyota/faults', ({
-                                        reporter:"Emre",// Emre yerine tabloda kullanıcının girdiği veri gelmesi gerekli
-                                        registerDate:"23.02.1997",
-                                        recorder:"Halit",
-                                        reporterTel:5539667920,
-                                        faultType:"Su Kaçağı",
-                                        location:"Mutfak",
-                                        shop:"boş",
-                                        assigned:"Destek Birimi",
-                                        emergency:"Evet",
-                                        explanation:"Sorun Çözüldü",
-                                        endDay:"26.05.2019",
+                                        reporter:newData.BILDIREN,
+                                        registerDate:newData.KAYIT_TARIHI,
+                                        recorder:newData.KAYIT_YAPAN,
+                                        reporterTel:newData.BILDIREN_TEL,
+                                        faultType:newData.ARIZA,
+                                        location:newData.YERI,
+                                        shop:newData.SHOP,
+                                        assigned:newData.ATANAN,
+                                        emergency:newData.ACIL,
+                                        explanation:newData.IS_BITIMI_ACIKLAMA,
+                                        endDay:newData.TAMAMLAMA_TARIHI,
 
                                     }));
                                 }
@@ -105,7 +105,7 @@ class App extends Component {
                         new Promise((resolve, reject) => {
                             setTimeout(() => {
                                 {
-                                    axios.delete('http://localhost:8081/toyota/faults/');
+                                    axios.delete(`http://localhost:8081/toyota/faults/${newData.KAYIT_NO}`);
                                 }
                                 resolve()
                             }, 1)
