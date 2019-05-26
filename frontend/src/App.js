@@ -16,6 +16,20 @@ class App extends Component {
                 const persons = res.data;
                 this.setState({ persons });
             })
+
+        axios.post(`http://localhost:8081/toyota/faults`)
+            .then(res => {
+                const persons = res.data;
+                this.setState({ persons });
+            })
+
+        axios.delete(`http://localhost:8081/toyota/faults`)
+            .then(res => {
+                const persons = res.data;
+                this.setState({ persons });
+            })
+
+
     }
 
     render() {
@@ -67,36 +81,10 @@ class App extends Component {
                         new Promise((resolve, reject) => {
                             setTimeout(() => {
                                 {
-                                    /* const persons = this.state.data;
-                                    data.push(newData);
-                                    this.setState({ data }, () => resolve()); */
+                                    axios.post('http://localhost:8081/toyota/faults', ({reporter:"ÖZGÜR"}));
                                 }
                                 resolve()
-                            }, 1000)
-                        }),
-                    onRowUpdate: (newData, oldData) =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                {
-                                    /* const data = this.state.data;
-                                    const index = data.indexOf(oldData);
-                                    data[index] = newData;
-                                    this.setState({ data }, () => resolve()); */
-                                }
-                                resolve()
-                            }, 1000)
-                        }),
-                    onRowDelete: oldData =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                {
-                                    /* let data = this.state.data;
-                                    const index = data.indexOf(oldData);
-                                    data.splice(index, 1);
-                                    this.setState({ data }, () => resolve()); */
-                                }
-                                resolve()
-                            }, 1000)
+                            }, 1)
                         }),
                 }}
                 localization={{
@@ -109,4 +97,3 @@ class App extends Component {
     }}
 
 export default App;
-
