@@ -83,7 +83,7 @@ class App extends Component {
                             setTimeout(() => {
                                 {
                                     axios.post('http://localhost:8081/toyota/faults', ({
-                                        reporter:"Emre",
+                                        reporter:"Emre",// Emre yerine tabloda kullanıcının girdiği veri gelmesi gerekli
                                         registerDate:"23.02.1997",
                                         recorder:"Halit",
                                         reporterTel:5539667920,
