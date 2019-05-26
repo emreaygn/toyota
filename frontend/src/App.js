@@ -77,11 +77,22 @@ class App extends Component {
                     showEmptyDataSourceMessage:true,
                 }}
                 editable={{
+
                     onRowAdd: newData =>
                         new Promise((resolve, reject) => {
                             setTimeout(() => {
                                 {
-                                    axios.post('http://localhost:8081/toyota/faults', ({reporter:"ÖZGÜR"}));
+                                    axios.post('http://localhost:8081/toyota/faults', ({reporter:"ÖZGÜR"}));// tırnak içinde özgür yazan yere formdan çektiği datayı yazması lazım
+                                }
+                                resolve()
+                            }, 1)
+                        }),
+
+                    onRowDelete: newData =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                {
+                                    axios.delete('http://localhost:8081/toyota/faults/1');// 1 yazan yere formdan çektiği rakamı yazması lazım
                                 }
                                 resolve()
                             }, 1)
