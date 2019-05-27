@@ -31,7 +31,7 @@ public class Fault {
     private String reporter;
 
     @Column(name = "bildiren_tel")
-    private Long reporterTel;
+    private String reporterTel;
 
     @Column(name = "ariza")
     private String faultType;

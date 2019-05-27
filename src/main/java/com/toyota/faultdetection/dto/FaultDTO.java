@@ -22,7 +22,7 @@ public class FaultDTO {
 
     private String reporter;
 
-    private Long reporterTel;
+    private String reporterTel;
 
     private String faultType;
 
