@@ -57,3 +57,15 @@ public class Fault {
     @Column(name = "kayit_turu")
     private String kayitTuru;
 }
+
+
+
+
+
+
+
+
+
+
+
+
